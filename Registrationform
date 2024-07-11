@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .custom-register-form-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 424px;
+            position: relative;
+        }
+        .custom-register-form-container h2 {
+            margin-bottom: 20px;
+        }
+        .custom-register-form-container .custom-form-input {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 20px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        .custom-register-form-container .custom-form-button {
+            background-color: midnightblue;
+            color: white;
+            padding: 10px;
+            margin: 5px 0;
+            border: none;
+            cursor: pointer;
+            width: 63%;
+            position: relative;
+
+        }
+        .custom-register-form-container .custom-form-button:hover {
+            opacity: 0.8;
+        }
+        .custom-error-message {
+            color: red;
+            display: none;
+        }
+        .custom-role-select {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 20px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="custom-register-form-container">
+        <h2>Register</h2>
+        <form id="registerForm" action="/register" method="post">
+            <input type="email" class="custom-form-input" placeholder="Enter Email" name="email" required>
+            <input type="password" class="custom-form-input" placeholder="Enter Password" name="psw" required>
+            <input type="password" class="custom-form-input" placeholder="Confirm Password" name="psw-confirm" required>
+            
+            <select name="role" class="custom-role-select" id="role" required>
+                <option value="" disabled selected>Select your role</option>
+                <option value="admin">Admin</option>
+                <option value="department">Department</option>
+                <option value="manager">Manager</option>
+                <option value="employee">Employee</option>
+            </select>
+
+            <div class="custom-error-message" id="error-message">Passwords do not match!</div>
+            
+            <button type="submit" class="custom-form-button">Register</button>
+        </form>
+        <p>Already have an account? <a href="login.html">Login here</a></p>
+    </div>
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', function(event) {
+            var password = document.getElementsByName('psw')[0].value;
+            var confirmPassword = document.getElementsByName('psw-confirm')[0].value;
+            if (password !== confirmPassword) {
+                event.preventDefault();
+                document.getElementById('error-message').style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>
