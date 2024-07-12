@@ -9,141 +9,217 @@
             font-family: Arial, sans-serif;
             background-color: #f7f7f7;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
+            flex-direction: column;
         }
-        .logo {
-            position: relative;
-            left: -500px;
-            margin-bottom: 20px;
-        }
-        .welcome-message {
-            margin-bottom: 20px;
-            font-size: 15px;
-            color: black;
-
-        }
-        .custom-login-container {
+        .register-container {
             background-color: #fff;
             padding: 20px;
-            width: 469px;
+            border-radius: 1px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 280px;
+            display: none;
             border: 1px solid black;
-            height: 450px;
-            position: relative;
         }
-        .custom-login-input {
-            width: 255px;
+        .login-container {
+            background-color: #fff;
+            padding: 4px;
+            border-radius: 1px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 446px;
+            display: none;
+            border: 1px solid black;
+        }
+        .register-container.active, .login-container.active {
+            display: block;
+        }
+        .register-input, .register-select, .register-button {
+            width: 100%;
             padding: 10px;
             margin: 5px 0 20px 0;
             display: block;
             border: 1px solid #ccc;
             box-sizing: border-box;
-            position: relative;
-            top: 124px;
         }
-        .custom-login-button {
+        .register-button {
             background-color: midnightblue;
             color: white;
-            padding: 10px;
-            margin: 5px 0;
             border: none;
             cursor: pointer;
-            width: 272px;
-            position: relative;
-            top: 12px;
         }
-        .custom-login-button:hover {
+        .register-button:hover {
             opacity: 0.8;
         }
-        .custom-login-checkbox {
+        .login-input, .login-password, .login-role-select, .login-empty-select, .login-button {
+            display: block;
+            box-sizing: border-box;
+        }
+        .login-input {
+            width: 243px;
+            padding: 10px;
+            margin: 5px 0 20px 0;
+            border: 1px solid #999;
+            position: relative;
+            top: 104px;
+            left: 31px;
+        }
+        .login-password {
+            width: 243px;
+            padding: 10px;
+            margin: 5px 0 20px 0;
+            border: 1px solid #999;
+            position: relative;
+            top: 96px;
+            left: 31px;
+        }
+        .login-role-select {
+            width: 118px;
+            padding: 10px;
+            margin: 5px 0 20px 0;
+            border: 1px solid #aaa;
+            position: relative;
+            left: 298px;
+            top: -67px;
+        }
+        .login-empty-select {
+            width: 243px;
+            padding: 10px;
+            margin: 5px 0 20px 0;
+            border: 1px solid #999;
+            position: relative;
+            left: 32px;
+            top: -121px;
+        }
+        .login-button {
+            background-color: midnightblue;
+            color: white;
+            border: none;
+            cursor: pointer;
+            width: 282px;
+            height: 36px;
+            position: relative;
+            top: -17px;
+            left: 20px;
+        }
+        .login-button:hover {
+            opacity: 0.8;
+        }
+        .error-message {
+            color: red;
+            display: none;
+        }
+        .link {
+            color: midnightblue;
+            text-decoration: none;
+        }
+        .link:hover {
+            text-decoration: underline;
+        }
+        .flex-between {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-top: 20px;
-            position: relative;
         }
-        .custom-login-link {
+        .register-container .link.register-link {
+            color: midnightblue;
+            text-decoration: none;
+        }
+        .register-container .link.register-link:hover {
+            text-decoration: underline;
+        }
+        .login-container .link.forgot-password-link {
             color: midnightblue;
             text-decoration: none;
             position: relative;
-            top: 7px;
-            left: -195px;
+            left: -166px;
+            top: -27px;
         }
-        .custom-login-link:hover {
+        .login-container .link.forgot-password-link:hover {
             text-decoration: underline;
         }
-        .custom-select-role {
+        .logo {
+            width: 100px;
+            height: auto;
+            margin-bottom: 20px;
             position: relative;
-            width: 254px;
-            padding: 10px;
-            margin: 5px 0 20px 0;
-            display: block;
-            border: 1px solid #ccc;
-            box-sizing: border-box;
-            position: relative;
-            left: -1px;
-            top: -39px;
-        }
-        .custom-select-empty {
-            position: relative;
-            width: 116px;
-            padding: 10px;
-            margin: 5px 0 20px 0;
-            display: block;
-            border: 1px solid #ccc;
-            box-sizing: border-box;
-            position: relative;
-            left: 288px;
-            top: -98px;
-        }
-        .custom-register-link {
-            color: midnightblue; 
-            text-decoration: none;
-        }
-        .custom-register-link:hover {
-            text-decoration: underline;
+            left: -400px;
         }
     </style>
 </head>
 <body>
     <img src="logo.png" alt="Logo" class="logo">
-    <div class="welcome-message">Welcome to</div>
-    <div class="custom-login-container">
-        <h5 style="position: relative;position: relative;font-size: 11px;left: 96px;">Hi Welcome to your Dashboard</h5>
-        <h5 style="position: relative; top: 82px;">Login in as</h5>
-        <form action="/login" method="post">
-            <input type="text" class="custom-login-input" placeholder="Enter Username" name="uname" required>
-            <input type="password" class="custom-login-input" placeholder="Enter Password" name="psw" required>
-            <select name="role" class="custom-select-role" id="role" required>
+    <div id="register-container" class="register-container active">
+        <h2>Register</h2>
+        <form id="registerForm" action="/register" method="post">
+            <input type="email" class="register-input" placeholder="Enter Email" name="email" required>
+            <input type="password" class="register-input" placeholder="Enter Password" name="psw" required>
+            <input type="password" class="register-input" placeholder="Confirm Password" name="psw-confirm" required>
+            <select name="role" class="register-select" id="register-role" required>
+                <option value="" disabled selected>Select your role</option>
+                <option value="admin">Admin</option>
+                <option value="department">Department</option>
+                <option value="manager">Manager</option>
+                <option value="employee">Employee</option>
+            </select>
+            <div class="error-message" id="register-error-message">Passwords do not match!</div>
+            <button type="submit" class="register-button">Register</button>
+        </form>
+        <p>Already have an account? <a href="#" class="link register-link" onclick="showContainer('login-container')">Login here</a></p>
+    </div>
+    <div id="login-container" class="login-container">
+        <h5 style="position: relative;left: 110px;top: -14px;">Hi, login to your dashboard</h5>
+        <h5 style="position: relative;left: 49px;top: 51px;">Login in as</h5>
+        <form id="loginForm" action="/login" method="post">
+            <input type="text" class="login-input" placeholder="Enter Username" name="uname" required>
+            <input type="password" class="login-password" placeholder="Enter Password" name="psw" required>
+            <select name="role" class="login-role-select" id="login-role" required>
                 <option value="" disabled selected>Select Role</option>
                 <option value="admin">Admin</option>
                 <option value="department">Department</option>
                 <option value="manager">Manager</option>
                 <option value="employee">Employee</option>
             </select>
-            <select name="empty" class="custom-select-empty" id="empty" required>
+            <select name="empty" class="login-empty-select" id="empty-select" required>
                 <option value="" disabled selected>Select Role</option>
             </select>
-            <div class="custom-login-checkbox">
-                <label style="position: relative; top: 6px;"><input type="checkbox" name="remember"> Remember me</label>
-                <a href="/forgot-password" class="custom-login-link">Forgot password?</a>
+            <div class="flex-between">
+                <label style="position: relative;top: -29px;left: 16px;"><input type="checkbox" name="remember"> Remember me</label>
+                <a href="/forgot-password" class="link forgot-password-link">Forgot password?</a>
             </div>
-            <button type="submit" class="custom-login-button">Login</button>
+            <button type="submit" class="login-button">Login</button>
         </form>
-        <p style="position: relative; top: 9px;">Don't have an account? <a href="register.html" class="custom-register-link">Register here</a></p>
+        <p>Don't have an account? <a href="#" class="link register-link" onclick="showContainer('register-container')">Register here</a></p>
     </div>
+
     <script>
+        function showContainer(containerId) {
+            var containers = document.querySelectorAll('.register-container, .login-container');
+            containers.forEach(container => {
+                container.classList.remove('active');
+            });
+            document.getElementById(containerId).classList.add('active');
+        }
+
+        document.getElementById('registerForm').addEventListener('submit', function(event) {
+            var password = document.getElementsByName('psw')[0].value;
+            var confirmPassword = document.getElementsByName('psw-confirm')[0].value;
+            if (password !== confirmPassword) {
+                event.preventDefault();
+                document.getElementById('register-error-message').style.display = 'block';
+            }
+        });
+
         document.addEventListener('DOMContentLoaded', function() {
-            const roleSelect = document.getElementById('role');
-            const emptySelect = document.getElementById('empty');
+            const roleSelect = document.getElementById('login-role');
+            const emptySelect = document.getElementById('empty-select');
 
             roleSelect.addEventListener('change', function() {
                 const selectedRole = roleSelect.value;
 
-                emptySelect.innerHTML = ''; // Reset empty dropdown
+                emptySelect.innerHTML = ''; 
                 const optionElement = document.createElement('option');
                 optionElement.value = selectedRole;
                 optionElement.textContent = selectedRole.charAt(0).toUpperCase() + selectedRole.slice(1);
@@ -155,3 +231,4 @@
     </script>
 </body>
 </html>
+
