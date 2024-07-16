@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Page</title>
+    <style>
+       
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            color: black;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .top-bar {
+            width: 100%;
+            height: 32px;
+            background-color: black;
+            color: white;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            box-sizing: border-box;
+            flex-shrink: 0;
+            position: relative;
+            top: 51px;
+        }
+
+        .menu-button {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #444;
+            color: white;
+            border: none;
+            padding: 10px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        .menu-button:hover {
+            background-color: #555;
+        }
+
+        .menu-icon {
+            
+            width: 20px;
+    height: 2px;
+    background-color: white;
+    margin: 1px 0;
+}
+        .dashboard-button {
+            background-color: #444;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            position: relative;
+            height: 29px;
+        }
+
+        .dashboard-button:hover {
+            background-color: #555;
+        }
+
+        .container {
+            display: flex;
+            flex-grow: 1;
+            overflow: hidden;
+        }
+
+        .dashboard {
+            width: 173px;
+            padding: 20px;
+            box-sizing: border-box;
+            flex-shrink: 0;
+            overflow-y: auto;
+           
+        }
+
+    
+.employee-select {
+    width: 110px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #dcdde1;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    position: relative;
+    top: 113px;
+}
+
+.employee-select option {
+    background-color: white;
+    color: black;
+}
+
+.employee-select:hover {
+    background-color: #f0f0f0;
+}
+
+.employee-select:focus {
+    outline: none;
+    background-color: #f0f0f0;
+}
+
+
+.leave-select {
+    width: 110px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #dcdde1;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    position: relative;
+    top: 113px;
+}
+
+.leave-select option {
+    background-color: white;
+    color: black;
+}
+
+.leave-select:hover {
+    background-color: #f0f0f0;
+}
+
+.leave-select:focus {
+    outline: none;
+    background-color: #f0f0f0;
+}
+
+
+.attendance-select {
+    width: 110px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #dcdde1;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    position: relative;
+    top: 113px;
+}
+
+.attendance-select option {
+    background-color: white;
+    color: black;
+}
+
+.attendance-select:hover {
+    background-color: #f0f0f0;
+}
+
+.attendance-select:focus {
+    outline: none;
+    background-color: #f0f0f0;
+}
+
+
+.payroll-select {
+    width: 110px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #dcdde1;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    position: relative;
+    top: 113px;
+}
+
+.payroll-select option {
+    background-color: white;
+    color: black;
+}
+
+.payroll-select:hover {
+    background-color: #f0f0f0;
+}
+
+.payroll-select:focus {
+    outline: none;
+    background-color: #f0f0f0;
+}
+
+
+        .main-content-container {
+            flex-grow: 1;
+            padding: 20px;
+            box-sizing: border-box;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-y: auto;
+        }
+
+        .main-content {
+           width: 100%;
+    max-width: 1132px;
+    padding: 20px;
+    border-radius: 1px;
+    
+    box-sizing: border-box;
+    border: 2px solid black;
+    background-color: #fff;
+    height: 490px;
+    top:26px;
+    position: relative;
+
+        }
+
+        .empty-person {
+            width: 32px;
+            height: 32px;
+            background-color: #ccc;
+            border-radius: 50%;
+            position: absolute;
+            top: 10px; 
+            right: 20px; 
+        }
+        .small-container{
+            width: 189px;
+    height: 434px;
+    border: 1px solid black;
+    border-radius: -15px;
+    padding: 10px;
+    box-sizing: border-box;
+    position: relative;
+    top: 14px;
+
+        }
+        .button {
+            padding: 10px 20px;
+            border: 1px solid black;
+            border-radius: -15px;
+            cursor: pointer;
+            color: black;
+            background-color: #007bff; 
+            margin-bottom: 10px;
+            width: 100%;
+        }
+
+        .button:hover {
+            background-color: white;
+        }
+        .job-desk-button {
+            background-color: white;
+        }
+
+        .employee-button {
+            background-color: white;
+        }
+
+        .leave-button {
+            background-color: white;
+        }
+
+        .attendance-button {
+            background-color: white;
+        }
+
+        .payroll-button {
+            background-color: white;
+        }
+
+        .administrations-button {
+            background-color:white;
+        }
+
+        .assets-button {
+            background-color:white;
+        }
+
+        .settings-button {
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="empty-person"></div>
+    <div class="top-bar">
+        <button class="menu-button">
+            <div class="menu-icon"></div>
+            <div class="menu-icon"></div>
+            <div class="menu-icon"></div>
+        </button>
+        <button class="dashboard-button">Dashboard</button>
+    </div>
+    <div class="container">
+        <div class="dashboard">
+            <select class="employee-select">
+                <option value="employee">Employee</option>
+                <option value="leave">Leave</option>
+                <option value="attendance">Attendance</option>
+                <option value="payroll">Payroll</option>
+            </select>
+            <select class="leave-select">
+                <option value="leave">Leave</option>
+                <option value="leaveRequests">Leave Requests</option>
+                <option value="leaveStatus">Leave Status</option>
+            </select>
+            <select class="attendance-select">
+                <option value="attendance">Attendance</option>
+                <option value="dailyLog">Daily Log</option>
+                <option value="attendanceRequest">Attendance Request</option>
+                <option value="summary">Summary</option>
+            </select>
+            <select class="payroll-select">
+                <option value="payroll">Payroll</option>
+                <option value="salaryGeneration">Salary Generation</option>
+                <option value="payRun">Pay Run</option>
+                <option value="paySlips">Pay Slips</option>
+            </select>
+        </div>
+        <div class="main-content-container">
+            <div class="main-content">
+                <div class= "small-container";>
+                    <button class="button job-desk-button">Job Desk</button>
+                    <button class="button employee-button">Employee</button>
+                    <button class="button leave-button">Leave</button>
+                    <button class="button attendance-button">Attendance</button>
+                    <button class="button payroll-button">Payroll</button>
+                    <button class="button administrations-button">Administrations</button>
+                    <button class="button assets-button">Assets</button>
+                    <button class="button settings-button">Settings</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
