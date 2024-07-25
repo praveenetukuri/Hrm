@@ -63,7 +63,7 @@
             margin: 5px 0 20px 0;
             border: 1px solid #999;
             position: relative;
-            top: 104px;
+            top: 61px;
             left: 31px;
         }
         .login-password {
@@ -72,7 +72,7 @@
             margin: 5px 0 20px 0;
             border: 1px solid #999;
             position: relative;
-            top: 96px;
+            top: 79px;
             left: 31px;
         }
         .login-role-select {
@@ -82,7 +82,7 @@
             border: 1px solid #aaa;
             position: relative;
             left: 298px;
-            top: -67px;
+            top: -127px;
         }
         .login-empty-select {
             width: 243px;
@@ -91,7 +91,7 @@
             border: 1px solid #999;
             position: relative;
             left: 32px;
-            top: -121px;
+            top: -185px;
         }
         .login-button {
             background-color: midnightblue;
@@ -171,7 +171,7 @@
     </div>
     <div id="login-container" class="login-container">
         <h5 style="position: relative;left: 110px;top: -14px;">Hi, login to your dashboard</h5>
-        <h5 style="position: relative;left: 49px;top: 51px;">Login in as</h5>
+        <h5 style="position: relative;left: 49px;top: -13px;">Login in as</h5>
         <form id="loginForm" action="/login" method="post">
             <input type="text" class="login-input" placeholder="Enter Username" name="uname" required>
             <input type="password" class="login-password" placeholder="Enter Password" name="psw" required>
@@ -231,4 +231,5 @@
     </script>
 </body>
 </html>
+
 
